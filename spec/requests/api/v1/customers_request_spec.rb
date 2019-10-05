@@ -23,37 +23,4 @@ describe "Customers API" do
     expect(response).to be_successful
     expect(customer["id"]).to eq(id)
   end
-
-  it "can create a new customer" do
-    customer_params = { first_name: "Leiya", last_name: "Kenney" }
-
-    post "/api/v1/customers", params: {customer: customer_params}
-    customer = Customer.last
-
-    expect(response).to be_successful
-    expect(customer.first_name).to eq(customer_params[:first_name])
-    expect(customer.last_name).to eq(customer_params[:last_name])
-  end
-
-  it "can update an existing customer" do
-    id = create(:customer).id
-    previous_name = Customer.last.first_name
-    customer_params = { first_name: "Evette", last_name: "Telyas" }
-
-    put "/api/v1/customers/#{id}", params: {customer: customer_params}
-    customer = Customer.find_by(id: id)
-
-    expect(response).to be_successful
-    expect(customer.first_name).to_not eq(previous_name)
-    expect(customer.first_name).to eq("Evette")
-  end
-
-  it "can destroy an customer" do
-    customer = create(:customer)
-
-    expect{ delete "/api/v1/customers/#{customer.id}" }.to change(Customer, :count).by(-1)
-
-    expect(response).to be_success
-    expect{Customer.find(customer.id)}.to raise_error(ActiveRecord::RecordNotFound)
-  end
 end
