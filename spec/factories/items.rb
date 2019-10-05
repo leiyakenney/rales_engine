@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :item do
-    name { "MyString" }
-    description { "MyString" }
-    unit_price { "10000" }
+    name { "Banana" }
+    description { "Bananarific" }
+    unit_price { "100" }
     merchant
   end
 end
