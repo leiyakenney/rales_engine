@@ -38,7 +38,6 @@ RSpec.describe Api::V1::Merchants do
         expect(response).to be_successful
         favorite_customer = JSON.parse(response.body)
 
-        expect(favorite_customer.class).to eq Hash
         expect(favorite_customer["data"].count).to eq(1)
         expect(favorite_customer["data"][0]["attributes"]["first_name"]).to eq(@customer_1.first_name)
       end

@@ -2,7 +2,8 @@
 
 RalesEngine is an api built to expose SalesEngine data. All endpoints return JSON data and are exposed under an api and version namespace.
 
-**Note** As I was struggling this first week, I am proud of getting through all the Merchants information. Some things have started clicking, and the Business Intelligence Endpoints went quicker than expected, mostly due to the fact that we had done one of those in class together in groups. I'm still not totally comfortable with everything, but I'm feeling much better than I was last week.
+### Note
+As I was struggling this first week, I am proud of getting through all the Merchants information with my own tests passing. Some things have started clicking, and the Business Intelligence Endpoints went quicker than expected, mostly due to the fact that we had done one of those in class together in groups. I'm still not totally comfortable with Spec Harness, but I'm feeling much better than I was last week. All my merchant endpoints tests pass in Spec Harness, but I'm still working on getting the Business Intelligence test to pass, though I have it passing in my own tests. 
 
 # Setup
 
@@ -11,7 +12,7 @@ RalesEngine is an api built to expose SalesEngine data. All endpoints return JSO
   * Clone down this repo using ruby 2.4.1
   * `bundle`
   * `rake db:{create,migrate}`
-  * `rails import:all` (note: this may take some time)
+  * `rake import:merchants`
 
 
 # Endpoints
