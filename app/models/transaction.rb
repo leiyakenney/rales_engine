@@ -1,4 +1,5 @@
 class Transaction < ApplicationRecord
-  belongs_to :customer
   belongs_to :invoice
+
+  scope :successful, -> { where(result: "success")}
 end
