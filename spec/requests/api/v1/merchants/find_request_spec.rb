@@ -37,7 +37,7 @@ describe 'Merchants Find API' do
   end
 
   it "returns a merchant by its updated_at" do
-    merchant = create(:merchant, created_at: "1999-01-03T10:10:10.000Z",updated_at: "2002-02-03T11:11:11.000Z")
+    merchant = create(:merchant, created_at: "2002-02-03T10:10:10.000Z",updated_at: "2002-02-03T11:11:11.000Z")
     get "/api/v1/merchants/find?updated_at=#{merchant.updated_at}"
     expect(response).to be_successful
     merch = JSON.parse(response.body)["data"]
